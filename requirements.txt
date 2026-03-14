@@ -6,3 +6,4 @@ scikit-learn
 numpy
 pandas
 psycopg2-binary
+flask-cors
