@@ -4,6 +4,7 @@ Local : python app.py  →  http://localhost:5000
 Cloud : gunicorn via Procfile
 """
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from dotenv import load_dotenv
 import json, os, urllib.request
 from datetime import datetime
@@ -13,6 +14,7 @@ import database as db
 load_dotenv()
 
 app       = Flask(__name__)
+CORS(app)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 APP_URL   = os.environ.get("APP_URL", "")   # e.g. https://paddyshield-2.onrender.com
 
